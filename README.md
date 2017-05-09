@@ -6,7 +6,7 @@ Dice is very flexible and can be customized to suit your needs.  By default, Dic
 
 ## Usage
 
-Using Dice is simple. Download the **dice.js** file from this repository and call it from your HTML:
+Using Dice is simple. Download the **[dice.js](https://github.com/freginold/Dice/blob/master/dice.js)** file from this repository and call it from your HTML:
 
     <script src="dice.js"></script>
 
