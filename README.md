@@ -51,21 +51,23 @@ Dice returns a value equal to the number of characters processed. This value is 
 
 Dice logs error messages to the console for debugging and error handling.
 
-[more description soon]
-
 ##### `Dice.js error 0: Argument is not a valid node.`
-If you get this error, it's probably because the first argument passed in is not an HTML element. Make sure to pass in a valid element object (i.e. `document.getElementById("myDiv")`) rather than just an ID (`myDiv`).
+If you get this error, it's probably because the first argument passed in is not an HTML node. Make sure to pass in a valid element object (i.e. `document.getElementById("myDiv")` or `document.getElementById("myDiv").childNodes[1]`) rather than just an ID (`myDiv`).
 
-##### `Dice.js error 1: No valid text was node found.`
+##### `Dice.js error 1: No valid text node was found.`
+The node or element passed in is not a text node, and none of that node's children are (non-empty) text nodes.
 
 ##### `Dice.js error 2: Text node passed in is empty.`
+The text node passed in as the argument is empty (or only contains white space/line breaks).
 
 ##### `Dice.js error 3: No text nodes found as children of argument node.`
+The node passed in as the main argument is a valid element, but it does not have a valid (non-empty) text node as a child.
 
 ##### `Dice.js error 4: Argument node is no longer part of the DOM tree.`
+The main reason for this error is trying to select a text node that was already processed by Dice and has been removed from the DOM tree.
 
 ##### `Dice.js error 5: Argument does not have 'parentNode' property.`
-This error is likely because the first argument passed into Dice is `undefined`.
+This error is likely because the first argument passed into Dice is either `undefined` or not an HTML node.
 
 
 ### Things to Keep in Mind
