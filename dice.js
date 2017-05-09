@@ -1,6 +1,5 @@
 
-// Dice.js
-
+// Dice.js v1.0
 
 function dice(el) {
     var props = {};
