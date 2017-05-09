@@ -28,3 +28,49 @@ Any string here will be used as the ID prefix for the character nodes created by
 #### `all`
 Give `all` a string value to assign a class to each character in the text node.  You can assign a single class (`all: class1`) or a space-delimited list of classes (`all: class1 class2 class3`).
 
+#### `odd`
+The class or class list set as the value for `odd` will be applied to all odd-numbered characters. The count goes by character number, not index, so the first character will be odd.  The count does not apply to any skipped characters.
+
+#### `even`
+Similar to the `odd` property except... well, you know.
+
+#### `skip`
+`skip` accepts a string containing any characters that you don't want an ID or class assigned to. These characters should not be delimited, so setting `skip` as "`aF ,1`" will tell Dice to skip all lower-case a's, capital F's, spaces, commas, and 1's. `skip` is case-sensitive.
+
+### Setting the Properties
+
+Dice looks for the property values as one object. You can either set the properties inside the function call itself, or set them beforehand and assign the values to an object.
+
+[more here soon]
+
+### Return Value
+
+Dice returns a value equal to the number of characters processed. This value is useful if you'll be using JavaScript to manipulate the `span` elements later on. The value does not include any skipped characters, so calling Dice on an element with `innerText` of "`Hi there`" and `skip` set to "`e`" would return `6`.
+
+### Error Messages
+
+Dice logs error messages to the console for debugging and error handling.
+
+[more description soon]
+
+##### `Dice.js error 0: Argument is not a valid node.`
+If you get this error, it's probably because the first argument passed in is not an HTML element. Make sure to pass in a valid element object (i.e. `document.getElementById("myDiv")`) rather than just an ID (`myDiv`).
+
+##### `Dice.js error 1: No valid text was node found.`
+
+##### `Dice.js error 2: Text node passed in is empty.`
+
+##### `Dice.js error 3: No text nodes found as children of argument node.`
+
+##### `Dice.js error 4: Argument node is no longer part of the DOM tree.`
+
+##### `Dice.js error 5: Argument does not have 'parentNode' property.`
+This error is likely because the first argument passed into Dice is `undefined`.
+
+
+### Things to Keep in Mind
+
+Dice wraps each character (except skipped characters) in a `span`, and all of them are wrapped in one outer `span`.  You can style those `span`s however you want, but keep in mind that if you want to apply vertical margins to them, you'll need to use `display: inline` or `display: inline-block`.
+
+If using Dice multiple times on the same page or app, be sure to either specify a different ID prefix or set `id` to `false` to avoid multiple elements with the same ID.
+
