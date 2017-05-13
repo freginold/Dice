@@ -1,12 +1,45 @@
-<style>
-  #diceImg {
-    width: 100%;
-  }
-</style>
-<script src="dice.js"></script>
+<head>
+    <title>Dice.js</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- jQuery v1.12.0 -->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <!-- Bootstrap v3.3.6 -->
+    <script src="http://freginold.github.io/fontSwitcher/fontSwitcher.min.js"></script>
+        <!-- fontSwitcher v3.0 -->
+    <script src="dice.js" type="text/javascript"></script>
+        <!-- Dice v1.0 -->
+</head>
 
+<body>
 <img id="diceImg" src="dice.PNG" />
 
-<h3>Some things you can do with Dice:</h3>
+<h2 class='ctr'>Some things you can do with Dice:</h2>
 
 <div id='sizeDiv'>Have fun with text sizes</div>
+
+<div id='curveDiv' class='text-center'>Curve &nbsp; text &nbsp; any &nbsp; way &nbsp; &nbsp; you &nbsp; want</div>
+
+<script>
+
+// ------------- change text sizes -------------
+dice(document.getElementById('sizeDiv'), {id: false, all: 'sized'});
+var size = 0.4;
+var sizeSpans = document.getElementsByClassName('sized');
+for (var i = 0; i < sizeSpans.length; i++) {
+    if (i === 0) { sizeSpans[i].style.fontSize = "" + (size + (4 / .4)) + "em"; }
+    sizeSpans[i].style.fontSize = "" + (size + (4 / (i/2))) + "em";
+}
+
+// ------------- curve text -------------
+dice(document.getElementById('curveDiv'), {id: "curved", all: "curved", skip: ""});
+var curvedSpans = document.getElementsByClassName('curved');
+for (var i = 0; i < curvedSpans.length; i++) {
+        curvedSpans[i].style.transform = "rotate(" + curvedSpans[i].id.charAt(curvedSpans[i].id.length - 1) + "0deg)";
+}
+
+
+</script>
+
+</body>
