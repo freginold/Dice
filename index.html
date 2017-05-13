@@ -13,15 +13,21 @@
 </head>
 
 <body>
-<img id="diceImg" src="dice.PNG" />
 
-<h2 class='ctr'>Some things you can do with Dice:</h2>
+<h2 class='ctr'><span class='headerSpan'>Some things you can do with <img id="diceImg" src="dice.PNG" /></span></h2>
+
+<div id='colorsDiv'>Alternate &nbsp; fonts &nbsp; and &nbsp; colors</div>
 
 <div id='sizeDiv'>Have fun with text sizes</div>
 
 <div id='curveDiv' class='text-center'>Curve &nbsp; text &nbsp; any &nbsp; way &nbsp; &nbsp; you &nbsp; want</div>
 
+
 <script>
+
+
+// ------------- alternate colors -------------
+dice(document.getElementById('colorsDiv'), {id: false, even: "evenColorClass", odd: "oddColorClass"});
 
 // ------------- change text sizes -------------
 dice(document.getElementById('sizeDiv'), {id: false, all: 'sized'});
