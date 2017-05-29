@@ -51,7 +51,7 @@ var optionsObj = {
     even: 'evenClass',
     odd: 'oddClass',
     skip: 'a4# .'
-}
+};
 ```
 Then you would pass the object in as the second argument:
 ```javascript
@@ -106,7 +106,7 @@ This error is likely because the first argument passed into Dice is either `unde
 
 ### Things to Keep in Mind
 
-Dice wraps each character (except skipped characters) in a `span`, and all of them are wrapped in one outer `span`.  You can style those `span`s however you want, but keep in mind that if you want to apply vertical margins or certain transformational CSS effects to them, you'll need to use `display: inline` or `display: inline-block`.
+Dice wraps each character in a `span`, and all of them are wrapped in one outer `span`.  You can style those `span`s however you want, but keep in mind that if you want to apply vertical margins or certain transformational CSS effects to them, you'll need to use `display: inline` or `display: inline-block`.
 
 If using Dice multiple times on the same page or app, be sure to either specify a different ID prefix or set `id` to `false` to avoid multiple elements with the same ID.
 
