@@ -4,6 +4,7 @@ Dice is a bit of JavaScript that slices up text nodes into single-character `spa
 
 Dice is very flexible and can be customized to suit your needs.  By default, Dice will assign an incremental ID to each new `span` element: `diced1`, `diced2`, etc. You can change the ID prefix to whatever you want, or forget assigning IDs altogether.  Classes can be assigned to the characters by odd/even designation (odd number characters get one class or class string and even numbers get another) or you can assign one class (or list of classes) to all characters.  You can even designate certain characters (maybe a space or punctuation) to be skipped.
 
+See some examples of what you can use Dice for here: [https://freginold.github.io/Dice/](https://freginold.github.io/Dice/)
 ## Usage
 
 Using Dice is simple. Download the **[dice.js](https://github.com/freginold/Dice/blob/master/dice.js)** file from this repository and load it from your HTML file:
