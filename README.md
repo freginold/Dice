@@ -26,7 +26,7 @@ Dice has several configurable properties, which can be passed into the function 
 Any string here will be used as the ID prefix for the character nodes created by Dice. For example, setting the `id` value to `ch` will result in all characters being wrapped in `span`s with IDs of `ch1`, `ch2`, etc. Setting `id` to `false` will disable assigning an ID to each character node. (*Default:* `diced`)
 
 #### `all`
-Give `all` a string value to assign a class to each character in the text node.  You can assign a single class (`all: class1`) or a space-delimited list of classes (`all: class1 class2 class3`). (*Default:* `false`)
+Give `all` a string value to assign a class to each character in the text node.  You can assign a single class (`all: "class1"`) or a space-delimited list of classes (`all: "class1 class2 class3"`). (*Default:* `false`)
 
 #### `odd`
 The class or class list set as the value for `odd` will be applied to all odd-numbered characters. The count goes by character number, not index, so the first character will be odd.  The count does not apply to any skipped characters. (*Default:* `false`)
