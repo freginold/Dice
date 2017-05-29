@@ -110,7 +110,7 @@ Dice wraps each character in a `span`, and all of them are wrapped in one outer 
 
 If using Dice multiple times on the same page or app, be sure to either specify a different ID prefix or set `id` to `false` to avoid multiple elements with the same ID.
 
-To include a single or double quote into the `skip` string, escape it with a backslash (i.e. `skip: "\""`) or wrap it in the other type of quote.
+To include a single or double quote into the `skip` string, escape it with a backslash (i.e. `skip: "\""`) or wrap it in the other type of quote (i.e. `skip: '"'`).
 
 ### Issues / Suggestions
 
