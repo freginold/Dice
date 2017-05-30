@@ -1,6 +1,11 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-size: 1em;
-    padding: 2px 2em;
+    padding: 2px 1em;
     margin: 0;
 }
 
@@ -36,27 +41,54 @@ body {
     color: #3333ff;
 }
 
+.staggered {
+    position: relative;
+}
+
 #diceImg {
     height: 250px;
     width: 250px;
 }
 
 #sizeDiv {
+    display: inline-block;
     padding: 4px;
-    margin: 10px;
+    margin: 2px 20px;
     color: #008800;
     font-family: 'Franklin Gothic', 'Helvetica', sans-serif;
 }
 
 #curveDiv {
+    display: inline-block;
     padding: 2px;
-    margin: 2px;
+    margin: 2px 25px;
     font-family: 'Geneva', 'Tahoma', sans-serif;
 }
 
 #colorsDiv {
     display: inline-block;
-    float: right;
     padding: 8px;
-    margin: 10px;
+    margin: 10px 20px;
+    vertical-align: bottom;
+}
+
+#fadeDiv {
+    display: inline-block;
+    float: right;
+    margin: 10px 50px 10px 20px;
+    padding: 1px;
+    font-size: 2em;
+    color: darkblue;
+    font-family: "Cambria", "Georgia", serif;
+}
+
+#staggerDiv {
+    display: inline-block;
+    height: 5em;
+    width: 8em;
+    padding: 2px;
+    margin: 80px 10px 20px 25px;
+    font-size: 2.5em;
+    font-weight: 700;
+    position: absolute;
 }
