@@ -14,13 +14,17 @@
 
 <body>
 
-<h2 class='ctr'><span class='headerSpan'>Some things you can do with <img id="diceImg" src="dice.PNG" /></span></h2>
+<h2 class='ctr'><span class='headerSpan'>Some of the things you can do with <img id="diceImg" src="dice.PNG" /></span></h2>
 
-<div id='colorsDiv'>Alternate &nbsp; fonts &nbsp; and &nbsp; colors</div>
+<div id='curveDiv' >Curve &nbsp; text &nbsp; any &nbsp; way &nbsp; &nbsp; you &nbsp; want</div>
+
+<div id='fadeDiv'>Fade text in or out or both</div>
 
 <div id='sizeDiv'>Have fun with text sizes</div>
 
-<div id='curveDiv' class='text-center'>Curve &nbsp; text &nbsp; any &nbsp; way &nbsp; &nbsp; you &nbsp; want</div>
+<div id='colorsDiv'>Alternate &nbsp; fonts &nbsp; and &nbsp; colors</div>
+
+<div id='staggerDiv'>Stagger text</div>
 
 
 <script>
@@ -41,10 +45,40 @@ for (var i = 0; i < sizeSpans.length; i++) {
 // ------------- curve text -------------
 dice(document.getElementById('curveDiv'), {id: "curved", all: "curved", skip: ""});
 var curvedSpans = document.getElementsByClassName('curved');
-for (var i = 0; i < curvedSpans.length; i++) {
-        curvedSpans[i].style.transform = "rotate(" + curvedSpans[i].id.charAt(curvedSpans[i].id.length - 1) + "0deg)";
+for (var j = 0; j < curvedSpans.length; j++) {
+        curvedSpans[j].style.transform = "rotate(" + curvedSpans[j].id.charAt(curvedSpans[j].id.length - 1) + "0deg)";
 }
 
+// ------------- fade text -------------
+var fadeOptions = {
+    id: false,
+    all: "fade",
+    skip: " "
+};
+dice(document.getElementById('fadeDiv'), fadeOptions);
+var fadeSpans = document.getElementsByClassName('fade');
+var plus = false;
+var opac = 0.15;
+for (var k = 0; k < fadeSpans.length; k++) {
+    if (plus) {
+        opac = opac - 0.07;
+    }
+    else {
+        opac = opac + 0.07;
+    }
+    fadeSpans[k].style.opacity = opac;
+    if (fadeSpans[k].style.opacity > 0.95) { plus = true; }
+}
+
+// ------------- stagger text -------------
+dice(document.getElementById('staggerDiv'), {all: 'staggered'});
+var staggeredSpans = document.getElementsByClassName('staggered');
+var ht = 0;
+for (var l = 0; l < staggeredSpans.length; l++) {
+    if (l < staggeredSpans.length / 2) { ht = ht + 5; }
+    else { ht = ht - 5; }
+    staggeredSpans[l].style.bottom = ht + "%";
+}
 
 </script>
 
