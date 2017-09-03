@@ -1,5 +1,5 @@
 
-// Dice.js v1.0
+// Dice.js v1.0.1
 
 function dice(el) {
     var props = {};
@@ -8,7 +8,7 @@ function dice(el) {
     var errorPrefix = "Dice.js error ";
     var errors = [
         errorPrefix + "0: Argument is not a valid node.",
-        errorPrefix + "1: No valid text was node found.",
+        errorPrefix + "1: No valid text node was found.",
         errorPrefix + "2: Text node passed in is empty.",
         errorPrefix + "3: No text nodes found as children of argument node.",
         errorPrefix + "4: Argument node is no longer part of the DOM tree.",
@@ -72,7 +72,7 @@ function dice(el) {
     }
     // create individual spans
     props = getProps(props);
-    var txt = trim(targetNode.wholeText);    
+    var txt = targetNode.wholeText.trim();
     var newStr = "";
     var idPrefix;
     var thisClass;
@@ -98,7 +98,7 @@ function dice(el) {
         if (props.odd && !(count % 2)) { thisClass += props.even + " "; }
         if (props.all) { thisClass += props.all; }
         if (thisClass !== "") {
-            thisClass = "class='" + trim(thisClass) + "' ";
+            thisClass = "class='" + thisClass.trim() + "' ";
         }
         newStr += "<span " + thisClass + idPrefix + ">" + thisChar + "</span>";
     }
@@ -132,39 +132,10 @@ function dice(el) {
                 tempTxt = "";
             }
         }
-        tempTxt = trim(tempTxt);
+        tempTxt = tempTxt.trim();
         if (tempTxt == "") {        // empty text node
             return false;
         }
         else { return true; }
-    }
-    function trim(str) {
-        // trim v1.1 for Dice
-        var done = false;
-        var len;
-        while (!done) {
-            len = str.length;
-	    str = checkFirst(str);
-        }
-        function checkFirst(strF) {
-            if (strF.charCodeAt(0) < 33) {
-                strF = strF.slice(1);
-            }
-            strF = checkLast(strF);
-            return strF;
-        }
-        function checkLast(strL) {
-            if (strL.charCodeAt(strL.length - 1) < 33) {
-                strL = strL.slice(0, strL.length - 1);
-            }
-            checkIfDone(strL);
-            return strL;
-        }
-        function checkIfDone(strD) {
-            if (strD.length === len) {
-                done = true;
-            }
-        }
-        return str;
     }
 }
