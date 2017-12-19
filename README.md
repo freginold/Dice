@@ -1,5 +1,7 @@
 ![Dice](https://github.com/freginold/Dice/blob/master/dice.PNG)
 
+[![GitHub release](https://img.shields.io/github/release/freginold/Dice.svg)](https://img.shields.io/github/release/freginold/Dice.svg) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/freginold/Dice.svg)](https://github.com/freginold/Dice)
+
 Dice is a bit of JavaScript that slices up text nodes into single-character `span` elements to allow for much more detailed styling.  With Dice, you can break up a word, phrase, line, or paragraph into one-character elements that can be styled by ID or class(es).
 
 Dice is very flexible and can be customized to suit your needs.  By default, Dice will assign an incremental ID to each new `span` element: `diced1`, `diced2`, etc. You can change the ID prefix to whatever you want, or forget assigning IDs altogether.  Classes can be assigned to the characters by odd/even designation (odd number characters get one class or class string and even numbers get another) or you can assign one class (or list of classes) to all characters.  You can even designate certain characters (maybe a space or punctuation) to be skipped.
