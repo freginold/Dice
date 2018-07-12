@@ -38,7 +38,7 @@ The class or class list set as the value for `odd` will be applied to all odd-nu
 Similar to the `odd` property except... well, you know. (*Default:* `false`)
 
 #### `skip`
-`skip` accepts a string containing any characters that you don't want an ID or class assigned to. These characters should not be delimited, so setting `skip` as "`aF ,1`" will tell Dice to skip all lower-case a's, capital F's, spaces, commas, and 1's. `skip` is case-sensitive. (*Default:* `""` (empty string))
+`skip` accepts a string containing any characters that you don't want an ID or class assigned to. These characters should not be delimited, so setting `skip` to "`aF ,1`" will tell Dice to skip all lower-case a's, capital F's, spaces, commas, and 1's. `skip` is case-sensitive. (*Default:* `""` (empty string))
 
 ### Setting the Properties
 
