@@ -70,7 +70,7 @@ dice(myNode, {
 ```
 ### Results
 
-After calling Dice on a text node or element containing a text node, that node will be replaced with a `span` containing inner `span`s -- one for each character.  For example, calling Dice on this `div`:
+After calling Dice on a text node or element containing a text node, that node will be replaced with a `span` containing inner `span` elements -- one for each character.  For example, calling Dice on this `div`:
 ```html
 <div>Hello World!</div>
 ```
@@ -109,7 +109,7 @@ This error is likely because the first argument passed into Dice is either `unde
 
 ### Things to Keep in Mind
 
-Dice wraps each character in a `span`, and all of them are wrapped in one outer `span`.  You can style those `span`s however you want, but keep in mind that if you want to apply vertical margins or certain transformational CSS effects to them, you'll need to use `display: inline` or `display: inline-block`.
+Dice wraps each character in a `span`, and all of them are wrapped in one outer `span`.  You can style those `span` elements however you want, but keep in mind that if you want to apply vertical margins or certain transformational CSS effects to them, you'll need to specify `display: inline` or `display: inline-block`.
 
 If using Dice multiple times on the same page or app, be sure to either specify a different ID prefix or set `id` to `false` to avoid multiple elements with the same ID.
 
